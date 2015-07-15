@@ -138,7 +138,7 @@
 
         files = files ? ' "' + [].concat(files).join('" "') + '"' : '';
 
-        return this._run(['commit', '-m', message].concat(files), function (err, data) {
+        return this._run(['commit', '-m', message], function (err, data) {
             then && then(err, !err && git._parseCommit(data));
         });
     };
